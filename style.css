@@ -1,0 +1,49 @@
+:root{--cy:#43e8ff;--mg:#ff4fa3;--gr:#4dffa0;--am:#ffc14d;--rd:#ff3d63;
+  --head:"Bebas Neue",Impact,"Arial Narrow",sans-serif;--body:"Libre Franklin",system-ui,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:radial-gradient(ellipse at 50% 30%,#101830 0,#04050a 70%);color:#d6e4ff;
+  font-family:var(--body);display:flex;align-items:center;justify-content:center;overflow:hidden}
+#app{width:min(96vw,calc(94vh*1.5));filter:drop-shadow(0 0 60px #2af3)}
+#hud{display:flex;align-items:center;gap:22px;padding:10px 18px;background:linear-gradient(#0d1226,#080b18);
+  border:1px solid #2a3a8c;border-bottom:0;border-radius:12px 12px 0 0;box-shadow:inset 0 1px 0 #5a6cff44}
+.logo,.title{font-family:var(--head);font-weight:400;letter-spacing:.06em;color:#fff;text-shadow:0 0 10px #43e8ff88}
+.logo{font-size:26px}.logo b,.title b{color:var(--cy);margin-left:6px}
+.cell{display:flex;flex-direction:column;gap:1px;font-family:var(--head);font-size:14px;color:#6a7aa8;letter-spacing:.08em}
+.cell em{font-style:normal;font-family:var(--head);font-size:21px;color:#e8f4ff;letter-spacing:.04em;line-height:1}
+.cell.right{margin-left:auto;text-align:right}
+#hData{color:var(--gr);text-shadow:0 0 8px var(--gr)}
+#hDist{color:var(--am);text-shadow:0 0 8px var(--am)}
+.pill{padding:1px 10px;border-radius:99px;border:1px solid currentColor;background:#ffffff0d;font-size:16px!important;transition:.2s}
+.btn{font-family:var(--head);letter-spacing:.08em;font-size:20px;color:#cfe0ff;background:#10183a;border:1px solid #3a4cc0;
+  padding:11px 22px;border-radius:8px;cursor:pointer;transition:.15s}
+.btn:hover{background:#18235a;box-shadow:0 0 18px #4a6cff66;transform:translateY(-1px)}
+.btn.primary{background:var(--cy);color:#04121a;border-color:var(--cy);box-shadow:0 0 22px #43e8ff66}
+.btn.small{padding:5px 12px;font-size:16px}
+#stage{position:relative;border:1px solid #2a3a8c;border-radius:0 0 12px 12px;overflow:hidden;line-height:0;background:#000}
+canvas{width:100%;height:auto;display:block;cursor:crosshair}
+.scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,#0000 0 2px,#00000022 2px 3px);mix-blend-mode:multiply}
+#over,#menu{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;line-height:1.3;
+  background:radial-gradient(#000b,#000f);backdrop-filter:blur(5px);text-align:center;animation:in .35s}
+#over.hidden,#menu.hidden{display:none}
+#over h1{margin:0;font-family:var(--head);font-size:clamp(44px,9vw,96px);letter-spacing:.08em;font-weight:400}
+#over.win h1{color:var(--gr);text-shadow:0 0 30px var(--gr),0 0 70px var(--gr)}
+#over.lose h1{color:var(--rd);text-shadow:0 0 30px var(--rd),0 0 70px var(--rd)}
+#over p{margin:0;color:#b8c8e8;font-size:17px}
+.btns{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;justify-content:center}
+.title{font-size:clamp(40px,6.5vw,72px);line-height:1}
+.tag{margin:0 0 10px;color:#8a9ac8;font-size:16px}
+#grid{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:94%}
+.card{position:relative;width:150px;padding:10px;display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;
+  background:linear-gradient(#111a3e,#0a1030);border:1px solid #33449e;border-radius:10px;color:#d6e4ff;cursor:pointer;font-family:var(--body);transition:.18s}
+.card canvas{width:100%;height:auto;border-radius:5px;margin-bottom:5px;border:1px solid #26357e}
+.card:hover:not(:disabled){transform:translateY(-4px);border-color:var(--cy);box-shadow:0 8px 26px #43e8ff44}
+.card .num{position:absolute;top:14px;left:16px;font-family:var(--head);font-size:26px;color:#fff;text-shadow:0 0 8px #000,0 0 4px #000}
+.card strong{font-family:var(--head);font-size:20px;letter-spacing:.04em;font-weight:400}
+.card small{font-size:12px;color:#8a9ac8;min-height:28px;line-height:1.25}
+.card em{font-style:normal;font-family:var(--head);font-size:15px;letter-spacing:.06em;color:var(--cy)}
+.card.done em{color:var(--gr)}
+.card.locked{opacity:.4;cursor:not-allowed;filter:grayscale(.7)}.card.locked em{color:#8a9ac8}
+.note{margin:8px 0 0;font-size:13px;color:#56648f}
+footer{text-align:center;font-size:12px;color:#56648f;margin-top:10px}
+@keyframes in{from{opacity:0}to{opacity:1}}
+@media(max-width:700px){#hud{gap:10px;padding:8px;flex-wrap:wrap}.logo{display:none}.card{width:120px}}

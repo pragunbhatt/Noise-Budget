@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOISE BUDGET</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Franklin:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="logo">NOISE<b>BUDGET</b></div>
+    <div class="cell"><span>LEVEL</span><em id="hLevel">1</em></div>
+    <div class="cell"><span>DATA</span><em id="hData">0/3</em></div>
+    <div class="cell"><span>DISTRACTIONS</span><em id="hDist"></em></div>
+    <div class="cell"><span>MOVEMENT</span><em id="hMode">STILL</em></div>
+    <div class="cell"><span>GUARD</span><em id="hGuard" class="pill">PATROL</em></div>
+    <div class="cell right"><span>TIME</span><em id="hTime">0.0</em></div>
+    <button id="menuBtn" class="btn small">LEVELS</button>
+  </header>
+  <div id="stage">
+    <canvas id="c" width="960" height="640"></canvas>
+    <div id="over" class="hidden">
+      <h1 id="oTitle"></h1><p id="oSub"></p>
+      <div class="btns">
+        <button id="bNext" class="btn primary">NEXT LEVEL</button>
+        <button id="bRetry" class="btn">RETRY</button>
+        <button id="bMenu" class="btn">LEVELS</button>
+      </div>
+    </div>
+    <div id="menu">
+      <div class="title">NOISE<b>BUDGET</b></div>
+      <p class="tag">Collect the data. Stay quiet. Don't get caught.</p>
+      <div id="grid"></div>
+      <p class="note">Clear a level to unlock the next one. Any unlocked level can be replayed.</p>
+    </div>
+    <div class="scan"></div>
+  </div>
+  <footer>WASD move &nbsp;·&nbsp; hold SHIFT to sneak &nbsp;·&nbsp; CLICK / SPACE throw distraction &nbsp;·&nbsp; R restart &nbsp;·&nbsp; ESC levels &nbsp;·&nbsp; M mute</footer>
+</div>
+<script src="audio.js"></script>
+<script src="levels.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
